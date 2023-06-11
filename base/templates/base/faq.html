@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<section class="faq__page">
+    <div class="faq_page__title">
+        <h1>Интересные факты о персиках</h1>
+        <p>Персик <span class="weight__warning">(Prunus persica)</span>, вид плодовых деревьев семейства розовых, относящийся к тому же роду, что и слива, вишня и абрикос (иногда выделяется в самостоятельный род Persica). 
+            Родом из Китая, но в Европу попал через Персию (Иран), где существовали великолепные персиковые сады, откуда и получил свое название.
+        </p>
+    </div>
+    {% for fact in facts %}
+        <div class="faq_page__item item">
+            <div class="item__button">
+                {{ fact.title }}
+            </div>
+            <div class="item__content">
+                <div class="item__body">
+                {{ fact.description }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</section>
+{% endblock content %}

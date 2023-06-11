@@ -1,0 +1,58 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<section class="photographers__page">
+    <div class="photographers_page__title">
+        <h1>
+            Мы приветствуем профессиональных фотографов! 
+        </h1>
+
+        <p>
+            Персиковый сад - прекрасное место для фотосъемки и создания воспоминаний. 
+            Пожалуйста, обязательно ознакомьтесь с нашими правилами профессиональной фотосъемки, 
+            а затем воспользуйтесь <label for="modal-trigger-center" class="open-modal highlighted">формой для фотографов</label>, чтобы забронировать сеанс.
+        </p>
+
+        <ul class="warnings">
+            <li><span class="red__warning">Внимание:</span> Все поля формы фотографа, помеченные звездочкой, <span class="highlighted">ОБЯЗАТЕЛЬНЫ</span> к заполнению!</li>
+            <li><span class="red__warning">Внимание:</span> Заполняя данную форму, вы принимаете и соглашаетесь с условиями Политики и процедуры фотографа</li>
+            <li><span class="red__warning">Внимание:</span> В целях экономии Вашего и нашего времени, мы вводим фиксированную предоплату
+                за фотосъемку <span class="highlighted">в размере 500 &#8381;</span>. В случае опоздания Заявителя и/или Клиента Заявителя - пересчет стоимости
+                времени фотосъемки <span class="highlighted">не производится</span>. В случае отмены фотосьемки по причине неявки Заявителя и/или Клиента Заявителя - 
+                предоплата за фотосьемку <span class="highlighted">не возвращается</span>. В случае форс-мажора связанного с погодными условиями за Заявителем и/или Клиентом Заявителя 
+                остается возможность переноса даты и/или времени фотосьемки на другое удобное время <span class="highlighted">без пересчета и/или возврата</span> стоимости фотосъемки.</li>
+            <li><span class="red__warning">Особое внимание:</span> Просим нашх клиентов отнестись с уважением и пониманиеv к тому, что мы вынуждены ограничивать количество людей в группе 
+                для фотосьемки в количестве <span class="highlighted">4-х человек</span>. Если все же есть необходимость увеличить группу для фотосьемки Вы можете взять с собой
+            <span class="highlighted">не более 2-х</span> человек. За каждого взымается дополнительная плата в размере <span class="highlighted">250 &#8381;</span></li>
+        </ul>
+    </div>
+    {% for point in points %}
+    <div class="photographers_page__item item">
+        <div class="item__button">
+            {{ point.title }}
+        </div>
+        <div class="item__content">
+            <div class="item__body">
+            {{ point.description }}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="pure-modal">
+        <input id="modal-trigger-center" class="checkbox" type="checkbox">
+        <div class="pure-modal-overlay">
+          <label for="modal-trigger-center" class="o-close"></label>
+          <div class="pure-modal-wrap a-center">
+            <label for="modal-trigger-center" class="close">&#10006;</label>
+            {% crispy form %}
+          </div>
+        </div>
+      </div>
+
+    
+</section>
+
+{% endblock content %}

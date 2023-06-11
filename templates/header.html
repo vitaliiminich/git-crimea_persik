@@ -1,0 +1,75 @@
+{% url 'index' as index %}
+{% url 'about' as about %}
+{% url 'sorts' as sorts %}
+{% url 'photographers' as photographers %}
+{% url 'contacts' as contacts %}
+
+<header>
+    <a class="logo {% if request.path == 'index' %} active-link {% endif %}" href="{% url 'index' %}"> <img src="../static/img/logo.png" alt="" width="175px"> </a>
+    <div class="navigation">
+        
+        <ul class="menu">
+            <div class="close-btn">
+                <i class='bx bx-x-circle'></i>
+            </div>
+            <li class="menu-item">
+                <a class="{% if request.path == about %} active-link {% endif %}" href="{% url 'about' %}">
+                    О нас
+                </a>
+            </li>
+            <li class="menu-item peaches">
+                <a class="sub-btn" href="#">
+                    Наши персики 
+                    <i class='bx bxs-chevron-down' ></i>
+                </a>
+                <ul class="sub-menu">
+                    <li class="sub-item"><a class="" href="{% url 'sorts' %}">Сорта</a></li>
+                    <li class="sub-item"><a href="{% url 'how-we-grow' %}">Как мы выращиваем</a></li>
+                    <li class="sub-item"><a href="{% url 'faq' %}">Интересные факты</a></li>
+                </ul>
+            </li>
+            <li class="menu-item events">
+                <a class="sub-btn" href="#">
+                    События 
+                    <i class='bx bxs-chevron-down' ></i>
+                </a>
+                <ul class="sub-menu">
+                    <li class="sub-item"><a href="{% url 'pickup' %}">Самовывоз персиков</a></li>
+                    <li class="sub-item"><a href="{% url 'self-collection' %}">Самосбор персиков</a></li>
+                    <li class="sub-item"><a href="{% url 'delivery' %}">Доставка</a></li>
+                    <li class="sub-item"><a href="{% url 'peach-adoption' %}">Усынови персик</a></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <a class="{% if request.path == photographers %} active-link {% endif %}" href="{% url 'photographers' %}">Фотографам</a>
+            </li>
+            <li class="menu-item"><a class="{% if request.path == contacts %} active-link {% endif %}" href="{% url 'contacts' %}">Контакты</a></li>
+
+            <span>Подпишись на наши соц. сети</span>
+
+            <ul class="mobile_social__icons">
+               
+                <li>
+                    <a href="">
+                        <i class='bx bxl-vk'> </i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bxl-instagram-alt' ></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class='bx bxl-telegram' ></i>
+                    </a>
+                </li>
+            </ul>
+        </ul>
+
+        
+    </div>
+    <div class="menu-btn">
+        <i class='bx bx-menu'></i>
+    </div>
+</header>   

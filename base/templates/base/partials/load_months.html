@@ -1,0 +1,6 @@
+<select name="amount" id="" class="custom-select mb-4">
+    <option class="selected">Выберите количество ящиков</option>
+{% for amount in amounts %}
+    <option value="{{ amount.pk }}"> {{ amount.amount }} </option>        
+{% endfor %}    
+</select>

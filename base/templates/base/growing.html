@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<section class="how_we__grow__page">
+    <article class="how_we_grow_page__acticle" >
+        {% for article in articles %}
+            <h1> {{ article.title }} </h1>
+            <p>
+                {{ article.body|safe }}
+            </p>
+       {% endfor %}
+    </article>
+</section>
+
+{% endblock content %}

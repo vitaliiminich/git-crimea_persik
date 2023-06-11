@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<section class="contacts__page">
+    <article class="contacts_page__article">
+        <h2>
+            Вы можете отавить отзыв заполнив контактную форму или перейдя по ссылке на одну из наших социальных сетей.
+        </h2>
+            <div style="position:relative;overflow:hidden;">  
+                <div style="position:relative;overflow:hidden;">
+                    <a href="https://yandex.ru/maps/org/bakhchisarayskiy_persik/130413842868/?utm_medium=mapframe&utm_source=maps" 
+                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Бахчисарайский персик</a>
+                    <a href="https://yandex.ru/maps/977/republic-of-crimea/category/agricultural_enterprise/184106458/?utm_medium=mapframe&utm_source=maps" 
+                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Сельскохозяйственное предприятие в Республике Крым</a>
+                    
+                    <iframe src="https://yandex.ru/map-widget/v1/?from=mapframe&ll=33.938729%2C44.876375&mode=search&oid=130413842868&ol=biz&z=15.26" 
+                    width="100%" height="550" frameborder="1" allowfullscreen="true" style="position:relative;">
+                    </iframe>
+                </div>
+            </div>
+            <div class="form">
+                <div class="form__title">Контакная форма</div>
+                {% crispy form %}
+            </div>
+            <div class="contacts_page__icons">
+                <ul class="icons">
+                    <li>
+                        <a href="#"><i class='bx bxl-vk'> </i>Вконтакте</a>
+                    </li>
+                    <li>
+                        
+                        <a href="#"><i class='bx bxl-telegram' ></i>Telegramm</a>
+                    </li>
+                    <li>
+                        
+                        <a href="#"><i class='bx bxl-instagram-alt' ></i>Instagramm</a>
+                    </li>
+                </ul>
+            </div>
+    </article>
+</section>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="slider"> 
+    <div class="slide current">
+        <div class="content">
+            <h1>
+                <i class='bx bxs-compass' ></i>
+                Наш сад располагается...
+            </h1>
+            <p>
+                ...всего в 40 минутах езды от Симферополя, 
+                в живописной загородной местности. Это сезонный бизнес, открытый для посетителей, 
+                когда созревают персики (обычно в середине июля).
+            </p>
+            <a href="{% url 'contacts' %}">
+                <i class='bx bx-trip'></i>
+                Узнать маршрут
+            </a>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="content">
+            <h1>
+                <i class='bx bxs-shield-alt-2'></i>
+                Больше всего мы известны...
+            </h1>
+            <p>
+                ...своими сладкими и сочными персиками. 
+                Наш живописный персиковый сад раскинулся на 4-х гектарах в предгорной местности 
+                в поселке Казанки, Бахчисарайского района.
+            </p>
+            <a href="{% url 'how-we-grow' %}">
+                <i class='bx bxs-leaf' ></i>
+                Как мы выращиваем
+            </a>
+        </div>
+    </div>
+    <div class="slide">
+        <div class="content">
+            <h1>
+                <i class='bx bxs-leaf' ></i>
+                Мы выращиваем...
+            </h1>
+            <p>
+                ...более 20 сортов персиков.Чтобы собрать для вас персики, мы ждём, 
+                пока они созреют на дереве. Мы гарантируем, что наши клиенты получат фрукты наилучшего качества.  
+            </p>
+            <a href="{% url 'sorts' %}">
+                <i class='bx bxs-search-alt-2'></i>
+                Смотреть все сорта
+            </a>
+        </div>
+    </div>
+</div>
+<div class="buttons">
+    <button id="prev"><i class='bx bxs-left-arrow' ></i></i></button>    
+    <button id="next"><i class='bx bxs-right-arrow' ></i></i></button>    
+</div>
+
+<section class="main__page">
+   <div class="main_page__title">
+            <h1>Хочешь вкусить кусочек рая? </h1> 
+            <h2>попробуй персик из Бахчисарая!</h2>
+    </div>
+
+    <div class="main_page__events">
+        <div class="main__event">
+            <h1>
+                <i class='bx bxs-widget'></i>
+                АКТУАЛЬНО НА СЕГОДНЯ  
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores cum delectus, 
+                distinctio eaque earum harum inventore totam sit! Nihil doloribus minus deserunt. 
+                A at dignissimos provident rem laboriosam doloremque quis.
+            </p>
+            
+           </div>            
+            <a href="#">
+                <i class='bx bx-file'></i>
+                Узнать подробнее
+            </a>
+    </div>
+   <div class="main_page__news">
+        <div class="sails">
+            <h1>
+                <i class='bx bxs-truck'></i></i>
+                Самовывоз  
+            </h1>
+            <a href="{% url 'pickup' %}">Продажи на нашем персиковом поле стартуют ежедневно.
+                С 09:00 до 16:00 ждём покупателей за самыми вкусными персиками в 
+                Бахчисарайской долине.
+            </a>
+                
+            
+        </div>
+        <div class="gathering">
+            <h1>
+                <i class='bx bxs-package'></i>
+                Самосбор  
+            </h1>
+            <a href="{% url 'self-collection' %}">
+                Окунитесь в атмосферу самостоятельного сбора персика. Мы ждем вас в обозначенные дни с 10:00
+                до 16:00.
+            </a>
+
+        </div>
+       <div class="photographers">
+        <h1>
+            <i class='bx bxs-camera'></i>
+            Фотографам  
+        </h1>
+        <a href="{% url 'photographers' %}">
+            Мы приветствуем профессиональных фотографов. За дополнительной информацией
+            пройдите по ссылке, которая расположена ниже.
+        </a>
+        
+       </div>            
+       <!--<a href="#">
+            <i class='bx bx-file'></i>
+            Узнать подробнее
+        </a>--> 
+    </div>
+</section>
+{% endblock content %}

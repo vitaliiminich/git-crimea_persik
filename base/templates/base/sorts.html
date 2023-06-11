@@ -1,0 +1,40 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<section class="sorts__page">  
+    <div class="sorts_page__title">
+        В нашем семейном хозяйстве насчитывается более 2000 персиковых деревьев и более 20 различных сортов. У каждого сорта есть свои отличия и они обеспечивают
+         вкус, который понравится всем. Ниже вы можете ознакомиться с нашими сортами фаворитами. На данный момент мы считаем эти сорта наиболее востребованными.
+    </div>
+        <ul class="period__menu">          
+        {% for month in months %}
+            {% if cat == month.title %}
+            <li class="selected">
+                {{ month.title }}
+            </li>
+            {% else %}
+            <li class="period_menu__item">
+                <a href="{% url 'sorts' %}?cat={{month.title}}"> {{ month.title }} </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+    <div class="peach__sorts" >
+    {% for sort in sorts %}
+        <div class="peach_sort__card">
+            <img src="{{ sort.image.url }}" alt="" >
+            <div>
+                    <div class="peach_card__title">
+                    <h2> {{ sort.title }} </h2>
+                        <p> {{ sort.mark }} <i class='bx bx-star'></i> / 5.0</p>
+                    </div>
+                        {{ sort.short_description }}
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+  
+</section>
+
+{% endblock content %}
