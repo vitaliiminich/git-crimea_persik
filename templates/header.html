@@ -5,7 +5,7 @@
 {% url 'contacts' as contacts %}
 
 <header>
-    <a class="logo {% if request.path == 'index' %} active-link {% endif %}" href="{% url 'index' %}"> <img src="../static/img/logo.png" alt="" width="175px"> </a>
+    <a class="{% if request.path == 'index' %} active-link {% endif %}" href="{% url 'index' %}"> <img class="logo" src="../static/img/logo.png" alt="" width="175px"> </a>
     <div class="navigation">
         
         <ul class="menu">

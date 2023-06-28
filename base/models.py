@@ -12,7 +12,7 @@ class Sort(models.Model):
     title = models.CharField(max_length=50, verbose_name="Название сорта")
     short_description = models.TextField(max_length=200, blank=True, verbose_name="Короткое описание")
     full_description = models.TextField(max_length=800, blank=True, verbose_name="Полное описание")
-    image = models.ImageField(upload_to="media/images", verbose_name="Изображение")
+    image = models.ImageField(upload_to="images/", verbose_name="Изображение")
     mark = models.FloatField(verbose_name="Оценка дегустаторов", default=5)
     cat = models.ForeignKey(Month, on_delete=models.PROTECT, null=True, verbose_name="Срок созревания")
 
@@ -35,7 +35,7 @@ class Agreement(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=300, verbose_name="Заголовок статьи")
-    image = models.ImageField(upload_to="media/images", verbose_name="Изображение", null=True, blank=True)
+    image = models.ImageField(upload_to="atl/images", verbose_name="Изображение", null=True, blank=True)
     body = models.TextField(verbose_name="Содержание статьи")
 
     def __str__(self):
